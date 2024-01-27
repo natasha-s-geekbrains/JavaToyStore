@@ -1,24 +1,26 @@
 import java.util.Objects;
 
 public class Toy {
-    private int id;
+    private String id;
     private int weight;
     private String name;
 
     public Toy() {
     }
 
-    public Toy(int id, int weight, String name) {
+    //Напишите класс-конструктор у которого принимает минимум 3 строки,
+    //содержащие три поля id игрушки, текстовое название и частоту выпадения игрушки
+    public Toy(String id, int weight, String name) {
         this.id = id;
         this.weight = weight;
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
