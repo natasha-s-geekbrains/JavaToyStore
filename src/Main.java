@@ -3,8 +3,6 @@ import java.util.PriorityQueue;
 public class Main {
     public static void main(String[] args) {
 
-        int newRepeatQty = 10;
-
 //   В метод put передаем последовательно несколько строк
 //   1 2 конструктор;
 //   2 2 робот;
@@ -20,11 +18,11 @@ public class Main {
         PriorityQueue<Toy> newPq = ToyStore.getPriorityQueue();
         System.out.println(newPq);
 
-//        Организовываем общую очередь.
-//        Вызываем Get 10 раз (newRepeatQty) и записываем результат в файл.
+        // Организовываем общую очередь.
+        // Вызываем Get в кол-ве раз, равном сумме весов принятых игрушек и записываем результат в файл.
+        ToyStore.get(newPq, "prizeToys.txt");
 
-        ToyStore.get(newRepeatQty, newPq, "prizeToys.txt");
-
+        // В соответствии с тремя предложенными выше строками (игрушками) и их весом:
         // Метод Get должен случайно вернуть либо “2”, либо “3” и соответствии с весом.
         // В 20% случаях выходит единица
         // В 20% двойка
