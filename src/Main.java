@@ -16,7 +16,6 @@ public class Main {
         ToyStore.put(stringToy3);
 
         PriorityQueue<Toy> newPq = ToyStore.getPriorityQueue();
-        System.out.println(newPq);
 
         // Организовываем общую очередь.
         // Вызываем Get в кол-ве раз, равном сумме весов принятых игрушек и записываем результат в файл.

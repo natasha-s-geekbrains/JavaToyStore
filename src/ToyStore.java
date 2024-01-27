@@ -16,7 +16,6 @@ public class ToyStore {
     public ToyStore() {
     }
 
-
     public static PriorityQueue<Toy> getPriorityQueue() {
         return priorityQueue;
     }
