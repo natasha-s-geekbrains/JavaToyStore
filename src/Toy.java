@@ -44,7 +44,7 @@ public class Toy {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Toy toy)) return false;
-        return getId() == toy.getId();
+        return getId().equals(toy.getId());
     }
 
     @Override
