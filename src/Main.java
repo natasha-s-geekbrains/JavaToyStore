@@ -45,33 +45,34 @@ public class Main {
         pq.add(new Toy(idsArray.get(2), Integer.parseInt(weightsArray.get(2)), namesArray.get(2)));
 
 
-//        Организовать общую очередь
+//        Организовать общую очередь.
 //        Вызвать Get 10 раз и записать результат в файл.
 //        Метод Get должен случайно вернуть либо “2”, либо “3” и соответствии с весом.
 //        В 20% случаях выходит единица
 //        В 20% двойка
 //        И в 60% тройка.
-        get(10, pq, "toys.txt");
+        get(10, pq, "prizeToys.txt");
     }
 
 
     public static String[] put(String stringToy) {
-        String[] newToyArray = stringToy.split(" ");
-        return newToyArray;
+        return stringToy.split(" ");
     }
 
     public static void get(int repeatQty, PriorityQueue<Toy> pq, String filePath) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
             for (int i = 0; i < repeatQty; i++) {
                 Toy prizeToy = pq.poll();
-                bw.write(prizeToy.getId() + " " + prizeToy.getName() + "\n");
-                prizeToy.setWeight(prizeToy.getWeight() - 1);
-                if (prizeToy.getWeight() > 0) {
-                    pq.offer(prizeToy);
+                if (prizeToy != null) {
+                    bw.write(prizeToy.getId() + " " + prizeToy.getName() + "\n");
+                    prizeToy.setWeight(prizeToy.getWeight() - 1);
+                    if (prizeToy.getWeight() > 0) {
+                        pq.offer(prizeToy);
+                    }
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.getStackTrace();
         }
     }
 }
